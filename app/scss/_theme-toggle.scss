@@ -1,0 +1,50 @@
+.theme-toggle {
+  position: fixed;
+  top: 7rem;
+  right: 7rem;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  background-color: var(--text-color);
+  box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &__icon {
+    width: 3rem;
+    height: 3rem;
+    fill: var(--bg-color);
+    transition: transform 0.3s ease, fill 0.3s ease;
+  }
+
+  .dark & {
+    background-color: var(--text-color);
+
+    .theme-toggle__icon {
+      fill: var(--bg-color);
+      transform: rotate(180deg);
+    }
+  }
+
+  @media (max-width: 767px) {
+    top: 3rem;
+    right: 2rem;
+    width: 4rem;
+    height: 4rem;
+
+    &__icon {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+}
+
+/* Анимация при переключении темы */
+.theme-transition * {
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease, fill 0.3s ease !important;
+}

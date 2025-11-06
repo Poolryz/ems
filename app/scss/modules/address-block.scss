@@ -1,0 +1,16 @@
+.address-block {
+  &__content {
+    display: inline-flex;
+  }
+  &__icon {
+    fill: #c41f3a;
+  }
+
+  &__text {
+    box-sizing: content-box;
+    padding-left: 1rem;
+    font-size: 1.7rem;
+    max-width: 170px;
+    color: #222;
+  }
+}

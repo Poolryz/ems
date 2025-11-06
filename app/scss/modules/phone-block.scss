@@ -1,0 +1,27 @@
+.phone-block {
+  &__content {
+    display: inline-flex;
+  }
+
+  &__icon {
+    fill: #c41f3a;
+  }
+
+  &__text {
+    padding-left: 1rem;
+  }
+
+  &__phone {
+    word-spacing: 0.3rem;
+    color: #222;
+    font-weight: 500;
+    font-size: 2rem;
+  }
+  &__work {
+    margin-top: 2px;
+  }
+  &__span {
+    font-weight: 500;
+    font-size: 1.5rem;
+  }
+}
