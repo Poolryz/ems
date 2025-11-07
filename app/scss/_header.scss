@@ -1,5 +1,6 @@
 // Тут будут стили для хедера
 .header {
+  @include container(1400px, 20px, 10px);
   position: absolute;
   width: 100%;
   &__body {

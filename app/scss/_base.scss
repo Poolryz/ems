@@ -41,9 +41,6 @@ $systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif;
   /* Цвета для светлой темы (по умолчанию) */
   --bg-color: #ffffff;
   --text-color: #1a1a1a;
-  --cursor-color: #dedede;
-  --cursor-big-fill: transparent;
-  --cursor-small-fill: #dedede;
 }
 
 html {
@@ -58,33 +55,26 @@ body {
 
 //============================== REM АДАПТИВКА (БЕЗ JS) ==============================//
 
-@media (min-width: 1930px) {
-  html {
-    font-size: 12px;
-  }
-}
-
-@media (max-width: 1700px) {
-  html {
-    font-size: 9px;
-  }
-}
-
 @media (max-width: 1430px) {
   html {
-    font-size: 8.6px;
+    font-size: 10px;
   }
 }
 
 @media (max-width: 1320px) {
   html {
-    font-size: 8.4px;
+    font-size: 9px;
+  }
+}
+@media (max-width: 1024px) {
+  html {
+    font-size: 8px;
   }
 }
 
 @media (max-width: 767px) {
   html {
-    font-size: 10px;
+    font-size: 7px;
   }
 }
 
@@ -445,88 +435,6 @@ input[type="search"]::-webkit-search-results-decoration {
   }
 }
 
-// // select //
-
-// control
-
-.control {
-  display: inline-block;
-  position: relative;
-  padding-left: 2.9rem;
-  margin-bottom: 0;
-  padding-top: 0;
-  cursor: pointer;
-  padding-top: 0.9rem;
-  font-weight: 400;
-  @include fontSizeRem(14px, 14px);
-  color: #1f2229;
-  @media (max-width: 1500px) {
-    font-size: 1.5rem;
-  }
-  @media (max-width: 776px) {
-    font-size: 14px;
-  }
-}
-
-.control a {
-  text-decoration: none;
-  color: #cd1e40;
-  display: inline-block;
-  line-height: 1;
-  &::after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 1px;
-    background-color: #cd1e40;
-    transition: width ease-out 0.5s;
-  }
-  &:hover {
-    color: #cd1e40;
-    &::after {
-      width: 0;
-    }
-  }
-}
-
-.control input {
-  position: absolute;
-  z-index: -1;
-  opacity: 0;
-  left: 0.6rem;
-  top: 0.2rem;
-}
-
-.control_indicator {
-  position: absolute;
-  top: 0.4rem;
-  left: 0;
-  height: 2.1rem;
-  width: 2.1rem;
-  background: #ffffff;
-  border: 0.07rem solid #1f2229;
-  border-radius: 0.4rem;
-}
-
-.control_indicator:after {
-  box-sizing: unset;
-  content: "";
-  position: absolute;
-  display: none;
-}
-
-.control-checkbox .control_indicator:after {
-  width: 1rem;
-  height: 0.8rem;
-  top: 52%;
-  left: 51%;
-  transform: translate(-50%, -50%);
-}
-
-.control input:checked ~ .control_indicator:after {
-  display: block;
-}
-
 .link {
   position: relative;
   &:hover {
@@ -604,17 +512,17 @@ a {
   }
 }
 
-.container {
-  // 1440px;
-  max-width: 144rem;
-  margin: 0 auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  @media (max-width: 767px) {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-  }
-}
+// .container {
+//   // 1440px;
+//   max-width: 144rem;
+//   margin: 0 auto;
+//   padding-left: 1rem;
+//   padding-right: 1rem;
+//   @media (max-width: 767px) {
+//     padding-left: 0.5rem;
+//     padding-right: 0.5rem;
+//   }
+// }
 
 .btn {
   font-family: "Roboto", sans-serif;
