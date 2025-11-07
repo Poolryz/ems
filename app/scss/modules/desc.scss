@@ -4,4 +4,7 @@
     color: #777;
     font-size: 1.5rem;
   }
+  @include MediaMaxWidht(965px) {
+    display: none;
+  }
 }

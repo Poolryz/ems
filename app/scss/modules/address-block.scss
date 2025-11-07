@@ -13,4 +13,7 @@
     max-width: 200px;
     color: #222;
   }
+  @include MediaMaxWidht(965px) {
+    display: none;
+  }
 }

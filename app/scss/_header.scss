@@ -3,6 +3,8 @@
   @include container(1400px, 20px, 10px);
   position: absolute;
   width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
   &__body {
     padding: 2rem 0;
   }
@@ -12,6 +14,10 @@
 
   &__top {
     display: flex;
+    align-items: center;
+    @include MediaMaxWidht(950px) {
+      justify-content: space-between;
+    }
   }
   &__top-left {
     flex: 1 0 50%;
@@ -20,6 +26,9 @@
     justify-content: flex-start;
     align-items: center;
     gap: 5.5rem;
+    @include MediaMaxWidht(950px) {
+      flex: none;
+    }
   }
   &__top-right {
     flex: 1 0 50%;
@@ -28,8 +37,14 @@
     align-items: center;
     justify-content: flex-end;
     gap: 5.5rem;
+    @include MediaMaxWidht(950px) {
+      flex: none;
+    }
   }
 
   &__bottom {
+    margin: 3rem 0;
+    width: 100%;
+    display: inline-flex;
   }
 }

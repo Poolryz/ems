@@ -1,0 +1,35 @@
+.nav {
+  flex: 1 0;
+  &_mobile {
+    .nav {
+      &__list {
+      }
+
+      &__item {
+      }
+
+      &__link {
+      }
+    }
+  }
+
+  &_desktop {
+    .nav {
+      &__list {
+        width: 100%;
+        display: inline-flex;
+        justify-content: space-around;
+      }
+
+      &__item {
+      }
+
+      &__link {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: $textcolor;
+        padding: 5px;
+      }
+    }
+  }
+}

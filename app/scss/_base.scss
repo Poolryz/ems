@@ -4,7 +4,7 @@
 
 $accent: #1a1a1a;
 $fontSize: 1.8rem;
-$textcolor: #1a1a1a;
+$textcolor: #222;
 $lineheight: 1.2;
 $fontFamily: Roboto, sans-serif;
 $systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif;
@@ -511,18 +511,6 @@ a {
     text-decoration: none;
   }
 }
-
-// .container {
-//   // 1440px;
-//   max-width: 144rem;
-//   margin: 0 auto;
-//   padding-left: 1rem;
-//   padding-right: 1rem;
-//   @media (max-width: 767px) {
-//     padding-left: 0.5rem;
-//     padding-right: 0.5rem;
-//   }
-// }
 
 .btn {
   font-family: "Roboto", sans-serif;

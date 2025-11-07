@@ -1,0 +1,13 @@
+.block-mobile {
+  display: flex;
+  gap: 10px;
+  svg {
+    box-sizing: content-box;
+    width: 30px;
+    padding: 5px;
+  }
+
+  @include MediaMinWidht(950px) {
+    display: none;
+  }
+}

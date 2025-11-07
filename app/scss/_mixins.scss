@@ -45,3 +45,15 @@
   gap: $gap;
   grid-template-columns: repeat(auto-#{$type}, minmax($min, $max));
 }
+
+// Media запрос
+@mixin MediaMaxWidht($width) {
+  @media (max-width: $width) {
+    @content;
+  }
+}
+@mixin MediaMinWidht($width) {
+  @media (min-width: $width) {
+    @content;
+  }
+}
