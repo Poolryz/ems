@@ -1,10 +1,12 @@
 import mobileMenuFunc from "./utils/mobileMenuFunc";
 import SimpleSlider from "./utils/simleSlider";
+import sliderPartners from "./utils/sliderPartners";
 // Инициализируем приложение при загрузке DOM
 document.addEventListener("DOMContentLoaded", () => {
   // Инициализируем страницы
   initHomePage();
   initAboutPage();
+  sliderPartners();
 });
 
 /**

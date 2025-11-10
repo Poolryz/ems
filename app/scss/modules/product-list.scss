@@ -13,15 +13,17 @@
     align-items: flex-start;
     justify-content: center;
     gap: 10px;
+    @include MediaMaxWidth(784px) {
+      flex: 0 0 100%;
+    }
   }
 
   &__link {
   }
 
   &__img {
-    width: 120px;
-    height: 120px;
-    object-fit: contain;
+    min-width: 120px;
+    min-height: 120px;
   }
 
   &__info {

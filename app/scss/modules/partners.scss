@@ -1,0 +1,11 @@
+.partners {
+  &__body {
+  }
+
+  &__content {
+    @include container(1400px, 20px, 10px);
+  }
+
+  &__h3 {
+  }
+}
