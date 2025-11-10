@@ -47,12 +47,12 @@
 }
 
 // Media запрос
-@mixin MediaMaxWidht($width) {
+@mixin MediaMaxWidth($width) {
   @media (max-width: $width) {
     @content;
   }
 }
-@mixin MediaMinWidht($width) {
+@mixin MediaMinWidth($width) {
   @media (min-width: $width) {
     @content;
   }

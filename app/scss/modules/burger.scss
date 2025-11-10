@@ -1,5 +1,5 @@
 .burger {
-  @include MediaMinWidht(965px) {
+  @include MediaMinWidth(965px) {
     display: none;
   }
 }

@@ -1,0 +1,68 @@
+.block-about {
+  &__body {
+    padding: 40px 0;
+  }
+
+  &__content {
+    @include container(1400px, 20px, 10px);
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__info {
+    flex: 0 0 55%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__h3 {
+    font-weight: 400;
+    font-size: 2.7rem;
+    color: #222;
+  }
+
+  &__p {
+    color: #555;
+    font-size: 1.6rem;
+  }
+
+  &__benefits {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  &__img {
+  }
+
+  &__value {
+    font-size: 4rem;
+    color: #888;
+  }
+
+  &__text {
+    font-size: 1.1rem;
+    color: #888;
+  }
+
+  &__image {
+    flex: 0 0 45%;
+    align-self: flex-end;
+  }
+}

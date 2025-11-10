@@ -1,3 +1,5 @@
+import mobileMenuFunc from "./utils/mobileMenuFunc";
+import SimpleSlider from "./utils/simleSlider";
 // Инициализируем приложение при загрузке DOM
 document.addEventListener("DOMContentLoaded", () => {
   // Инициализируем страницы
@@ -20,3 +22,10 @@ function initAboutPage() {
   const about = document.querySelector(".about");
   if (!about) return;
 }
+
+// Инициализация слайдера при загрузке DOM
+document.addEventListener("DOMContentLoaded", function () {
+  new SimpleSlider(".slider-container");
+});
+
+mobileMenuFunc();
