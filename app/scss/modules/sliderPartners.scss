@@ -2,55 +2,53 @@
   display: flex;
   flex-direction: row;
   gap: 12px;
-  overflow-x: scroll;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
 }
 
-.partners {
-  width: 100%;
-  overflow: hidden;
+.partners-slider {
+  overflow-x: hidden;
+  margin: 0 auto;
+
   padding: 12px 0;
-}
+  &__list {
+    transition: all 0.5s ease-in-out;
+    @include partners-flex;
+    scrollbar-width: none; // firefox
+    -ms-overflow-style: none; // IE/Edge
+    justify-content: flex-start;
 
-.partners__list {
-  @include partners-flex;
-  scrollbar-width: none; // firefox
-  -ms-overflow-style: none; // IE/Edge
-
-  &::-webkit-scrollbar {
-    display: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
-}
 
-.partners__item {
-  min-width: 120px;
-  width: 40vw;
-  max-width: 168px;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 2px 14px rgba(180, 180, 180, 0.07);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 10px;
+  &__item {
+    min-width: 120px;
+    width: 40vw;
+    max-width: 168px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 14px rgba(180, 180, 180, 0.07);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 10px;
 
-  img {
-    max-width: 100%;
-    height: auto;
-    object-fit: contain;
+    img {
+      max-width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
   }
 }
 
 // Desktop вид
 @media (min-width: 700px) {
-  .partners__item {
+  .partners-slider__item {
     min-width: 180px;
     width: 10vw;
     max-width: 200px;
     padding: 24px 18px;
   }
-  .partners__list {
-    gap: 24px;
+  .partners-slider__list {
   }
 }

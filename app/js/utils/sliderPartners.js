@@ -1,58 +1,58 @@
 function sliderPartners() {
-  const slider = document.querySelector(".partners__list");
-  const items = document.querySelectorAll(".partners__item");
-  let total = items.length;
-  let current = 0;
-  const STEP = 5;
-
-  // Для плавной прокрутки
-  function goToSlide(slideIndex) {
-    const width = slider.offsetWidth;
-    slider.scrollTo({
-      left: width * slideIndex,
-      behavior: "smooth",
-    });
-  }
-
-  function updateSlide() {
-    if (current + STEP >= total) {
-      current = total - STEP >= 0 ? total - STEP : 0;
-      goToSlide(current);
-      setTimeout(() => {
-        current = 0;
-        goToSlide(current);
-      }, 4000);
-    } else {
-      current += STEP;
-      goToSlide(current);
-    }
-  }
-
-  let interval = setInterval(updateSlide, 4000);
-
-  // Свайп для мобильных
-  let startX = 0;
-  slider.addEventListener("touchstart", function (e) {
-    startX = e.touches[0].clientX;
-  });
-  slider.addEventListener("touchend", function (e) {
-    let endX = e.changedTouches[0].clientX;
-    let diff = endX - startX;
-    if (Math.abs(diff) > 50) {
-      clearInterval(interval);
-      if (diff < 0 && current + STEP < total) {
-        current += STEP;
-      } else if (diff > 0 && current - STEP >= 0) {
-        current -= STEP;
+  const sliderList = document.querySelector(".partners-slider__list");
+  const slider = document.querySelector(".partners-slider");
+  const sliderListWidth = sliderList.clientWidth;
+  const slidersArr = sliderList.children;
+  const slidersLength = slidersArr.length;
+  const widthItem = slidersArr[0].clientWidth;
+  const gap = 12;
+  const itemsLine = 5;
+  const gapSum = 12 * (itemsLine - 1);
+  const widthContent = widthItem * itemsLine;
+  let flag = false;
+  slider.style = `width:${widthContent + gapSum}px`;
+  sliderList.style = `transform: translate(0px,0 )`;
+  if (slidersLength <= 5) {
+    return;
+  } else if (slidersLength <= 10) {
+    setInterval(() => {
+      if (!flag) {
+        sliderList.style = `transform: translate(-${
+          (widthItem + gap) * (slidersLength - itemsLine)
+        }px,0 )`;
+        flag = true;
+      } else {
+        sliderList.style = `transform: translate(0px,0 )`;
+        flag = false;
       }
-      goToSlide(current);
-      interval = setInterval(updateSlide, 2500);
-    }
-  });
+    }, 3500);
+  } else {
+    const fullGroups = Math.floor(slidersLength / itemsLine);
+    const remainder = slidersLength % itemsLine;
+    console.log(remainder);
 
-  // Пересчитать количество при добавлении партнёров
-  new MutationObserver(() => {
-    total = document.querySelectorAll(".partners__item").length;
-  }).observe(slider, { childList: true });
+    let currentIndex = 0;
+
+    function slideStep() {
+      let translateX = 0;
+
+      if (currentIndex < fullGroups) {
+        translateX = -(widthItem + gap) * itemsLine * currentIndex;
+      } else if (remainder > 0 && currentIndex === fullGroups) {
+        translateX =
+          -(widthItem + gap) * itemsLine - (widthItem + gap) * remainder;
+      } else {
+        currentIndex = -1;
+        translateX = 0;
+      }
+
+      sliderList.style.transform = `translate(${translateX}px, 0)`;
+      currentIndex++;
+
+      setTimeout(slideStep, 3500);
+    }
+
+    slideStep();
+  }
 }
 export default sliderPartners;
