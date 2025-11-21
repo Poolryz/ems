@@ -1,3 +1,4 @@
+import animateText from "./utils/animateCount";
 import mobileMenuFunc from "./utils/mobileMenuFunc";
 import SimpleSlider from "./utils/simleSlider";
 import sliderPartners from "./utils/sliderPartners";
@@ -7,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initHomePage();
   initAboutPage();
   sliderPartners();
+  animateText();
 });
 
 /**
