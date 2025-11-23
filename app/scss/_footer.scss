@@ -1,1 +1,75 @@
-// Тут будут стили для футера
+.footer {
+  &__body {
+    background: none 0px 0px repeat scroll rgb(55, 61, 68);
+  }
+
+  &__content {
+    @include container(1400px, 20px, 10px);
+  }
+
+  &__top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__row {
+  }
+}
+.nav-footer {
+  &__label {
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin: 20px 0;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__item {
+  }
+
+  &__link {
+    color: #a7a7a7;
+    font-size: 1.3rem;
+  }
+}
+.contacts-footer {
+  &__label {
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin: 20px 0;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  &__item {
+    svg {
+      transform: translate(-20px, 0);
+    }
+  }
+
+  &__link {
+    color: #a7a7a7;
+    font-size: 1.3rem;
+  }
+
+  &__job {
+    color: rgb(136, 136, 136);
+    font-size: 1.2rem;
+  }
+
+  &__text {
+    color: #a7a7a7;
+    font-size: 1.3rem;
+  }
+}
