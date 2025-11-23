@@ -1,5 +1,6 @@
 .partners {
   &__body {
+    margin: 75px 0;
   }
 
   &__content {
@@ -7,5 +8,8 @@
   }
 
   &__h3 {
+    font-weight: 400;
+    font-size: 2.7rem;
+    color: #222;
   }
 }

@@ -6,9 +6,21 @@ function sliderPartners() {
   const slidersLength = slidersArr.length;
   const widthItem = slidersArr[0].clientWidth;
   const gap = 12;
-  const itemsLine = 5;
+  let itemsLine = 5;
+
+  const screenWidth = document.documentElement.scrollWidth;
+  if (screenWidth > 1060) {
+    itemsLine = 5;
+  }
+  if (screenWidth < 1060 && screenWidth > 965) {
+    itemsLine = 3;
+  } else if (screenWidth < 965) {
+    itemsLine = 2;
+  }
   const gapSum = 12 * (itemsLine - 1);
   const widthContent = widthItem * itemsLine;
+  console.log(screenWidth, itemsLine);
+
   let flag = false;
   slider.style = `width:${widthContent + gapSum}px`;
   sliderList.style = `transform: translate(0px,0 )`;
@@ -29,7 +41,6 @@ function sliderPartners() {
   } else {
     const fullGroups = Math.floor(slidersLength / itemsLine);
     const remainder = slidersLength % itemsLine;
-    console.log(remainder);
 
     let currentIndex = 0;
 
